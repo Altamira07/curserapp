@@ -1,0 +1,27 @@
+{include file='header.html'}
+<div id="formNuevCuenta">
+<div class="">
+<div class="">
+  		<h2>Nueva cuenta</h2>
+	</div>
+<form class="" action="nueva_cuenta.php" method="post">
+	<div >
+		<label class=""> Correo:</label>
+		<input class="" id="email" type="email" name="correo" placeholder="correo"><br/>
+ 	<label class="">Contraseña</label>
+	<input class="" type="password"  id="pwd" name="pass" placeholder="Contraseña"><br/>
+	<label class="">Repite contraseña</label>
+	<input class="" type="password" id="pwd" name="passR" placeholder="Repite contraseña"><br/>
+	<p>
+      <input name="opcion" type="radio" value="2" id="2" />
+      <label for="2">Profesor</label>
+      <input name="opcion" value="3" type="radio" id="3"  />
+      <label for="3">Alumno</label>
+    </p>
+	</div>	
+	<br/>
+	<input class="btn waves-effect waves-light" type="submit" value="Crear cuenta">
+</form>
+</div>
+</div>
+{include file='footer.html'}

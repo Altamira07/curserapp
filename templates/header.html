@@ -1,0 +1,33 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <title>Curserapp</title> 
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <nav class="#00838f cyan darken-3">
+    <div class="nav-wrapper">
+      <a href="index.php" class="brand-logo">Curserapp</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Articulos</a></li>
+        
+        <li><a href="iniciar_sesion.php">Iniciar sesion</a></li>
+      </ul>
+    </div>
+  </nav>       
+<section class="mensaje">
+  {if isset($tipo)}
+    {if $tipo === 1}
+      <div class="text-center"><img src="images/error.png">{$mensaje}</div>
+    {elseif $tipo === 2}
+      <div class="text-center"><img src="images/success.png">{$mensaje}</div>
+    {/if}
+  {/if}
+</section>

@@ -1,0 +1,20 @@
+
+.contComentario{
+	width: 320px;
+	height: 300px;
+	margin: auto;
+	float: left;
+}
+#formSesion{
+	width: 50%;
+	margin: auto;
+	margin-top: 15px;
+}
+#formNuevCuenta{
+	width: 400px;
+	height: 600px;
+	margin: auto;
+}
+#text-center{
+	text-align: center;
+}

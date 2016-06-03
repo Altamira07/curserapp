@@ -1,0 +1,19 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../css/w3.css">
+  <title>Curserapp</title> 
+<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+</head>
+
+<section class="mensaje">
+  {if isset($tipo)}
+    {if $tipo === 1}
+      <div class="text-center"><img src="images/error.png">{$mensaje}</div>
+    {elseif $tipo === 2}
+      <div class="text-center"><img src="images/success.png">{$mensaje}</div>
+    {/if}
+  {/if}
+</section>
