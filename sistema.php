@@ -76,6 +76,26 @@
 	    	}
 	    	return true;
 	    }
+	    public function subirImagen($imagen)
+	    {
+	    	if($imagen['imagen']['error']!=0){
+				die("Error al subir la imagen");
+			}
+			if ($imagen['imagen']['size']> 204800) {
+				die("Archivo demasiado grande");
+			}
+			$extenciones = array("image/jpeg","image/png");
+			if (!in_array($_FILES['imagen']['type'], $extenciones)) {
+				die("Archivo incompatible");
+			}
+			$foto = $imagen ['imagen']['name'];
+			$origen = $imagen ['imagen']['tmp_name'];
+			$destino = PATHAPP.'images/articulos/'.$foto;
+			//$fotooriginal = $foto;
+			if (!move_uploaded_file($origen, $destino)){
+				die("Fallo al enviar el archivo");
+			}
+	    }
 
 	}
 	$web = new Sistema;

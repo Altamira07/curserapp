@@ -17,7 +17,7 @@ define('PATHLIB',PATHAPP.LIB);
 define ('MAIL_SMTPAUTH',true);
 define ('MAIL_SMTPSECURE','ssl');
 define('MAIL_HOST','smtp.gmail.com');
-define ('MAIL_USERNAME','luisaltamira07@gmail.com');
+define ('MAIL_USERNAME','');
 define ('MAIL_PASS','');
 define ('MAIL_SMTPDEBUG',2);
 define ('MAIL_PORT',465);

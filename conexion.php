@@ -71,6 +71,23 @@
 			$correo = $_SESSION['correo'];
 			$this->query("update curso set curso='$curso', descripcion='$descripcion' where id_curso='$id_curso' and correo = '$correo'  ");
 		}
+		public function getArticulos($correo){
+			return $this->datos("select id_articulo,titulo,descripcion,contenido,imagen from articulo where correo = '$correo'");
+		}
+		public function nuevoArticulo($titulo,$articulo,$descripcion,$imagen){
+			$correo = $_SESSION['correo'];
+			$this->query("insert into articulo(titulo,contenido,descripcion,imagen,correo) values ('$titulo','$articulo','$descripcion','$imagen','$correo')");
+		}
+		public function getMiArticulo ($id,$correo){
+			return $this->datos("select * from articulo where id_articulo = $id and correo = '$correo'");
+		}
+		public function delMiArticulo($id,$correo){
+			$this->query("delete from articulo where id_articulo = $id and correo = '$correo' ");
+		}
+		public function upMiArticulo($id,$titulo,$contenido,$descripcion){
+			$correo = $_SESSION['correo'];
+			$this->query("update articulo set titulo='$titulo', contenido='$contenido', descripcion='$descripcion' where id_articulo =$id and correo='$correo' ");
+		}
 	}
 
  ?>

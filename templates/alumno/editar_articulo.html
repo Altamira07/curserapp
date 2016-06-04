@@ -1,0 +1,31 @@
+{include file='alumno/header.html'}
+<div class="row">
+	<div class="col s6 offset-s3">
+		<img class="materialboxed" width="650" src="../images/articulos/{$imagen}">
+		<form enctype="multipart/form-data" method="post" action="editar_articulo.php?id={$id}">
+			<div class="row">
+		        <div class="input-field col s12">
+		        	<input type="hidden" name="id" value="{$id}">
+		          <input id="titulo" type="text" value="{$titulo}" class="validate" required name="titulo">
+		          <label for="titulo">Titulo del articulo</label>
+		        </div>
+		      </div>
+		    <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="descripcion"  class="materialize-textarea" required name="descripcion">{$descripcion}</textarea>
+		          <label for="descripcion">Breve descripcion</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="contenido" class="materialize-textarea" required name="articulo">{$contenido}</textarea>
+		          <label for="contenido">Articulo</label>
+		        </div>
+		      </div>
+		  <button class="btn waves-effect waves-light" type="submit">Guardar
+		    <i class="material-icons right">done</i>
+		  </button>
+		</form>
+	</div>
+</div>
+{include file='alumno/footer.html'}
