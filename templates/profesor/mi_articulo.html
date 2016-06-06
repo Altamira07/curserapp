@@ -1,0 +1,24 @@
+{include file='profesor/header.html'}
+<div class="row">
+    <a  href="mis_articulos.php"class="breadcrumb"><span class="blue-text text-darken-2">Mis articulos</span></a>
+    <a class="breadcrumb"><span class="blue-text text-darken-2">{$titulo}</span></a>
+ </div>
+<div class="row">
+	<div class="col s6 offset-s3">
+		<div class="row">
+			<h1>{$titulo}</h1><a href="eliminar_articulo.php?id={$id}"><img src="../images/del.png"></a>
+			<a href="editar_articulo.php?id={$id}"><img src="../images/edit.png"></a>
+		</div>
+		<div class="row">
+			<div class="col s12 m7">
+				<img class="materialboxed" width="650" src="../images/articulos/{$imagen}">
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				{$contenido}
+			</p>
+		</div>
+	</div>
+</div>
+{include file='profesor/footer.html'}

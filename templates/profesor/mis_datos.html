@@ -1,0 +1,46 @@
+{include file='profesor/header.html'}
+<div class="row">
+    <form class="col s6 offset-s3" method="post" action="mis_datos.php">
+      <div class="row">
+        <div class="input-field col s4">
+          <input placeholder="Nombre" value="{$perfil[0][1]}" id="nombre" name="nombre" required type="text" class="validate">
+          <label for="nombre">Nombre</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="apaterno" type="text" value="{$perfil[0][2]}"name="apaterno" required class="validate">
+          <label for="apaterno">Apellido paterno</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="amaterno" type="text"value="{$perfil[0][3]}" name="amaterno" required class="validate">
+          <label for="amaterno">Apellido Materno</label>
+        </div>
+      </div>
+      <div class="row">
+      		<div class="input-field col s4">
+          		<input id="edad" type="number" min="1" value="{$perfil[0][4]}" max="90" name="edad" required class="validate">
+          		<label for="edad">Edad</label>
+        </div>
+        	<div class="input-field col s8">
+          		<input id="nick" type="text" name="nick" value="{$perfil[0][0]}" required class="validate">
+          		<label for="nick">Nick</label>
+        	</div>
+      </div>
+      <div class="row">
+      	<div class="switch">
+      		Vincular a gravatar
+    	   <label>
+      		No
+          {if $perfil[0][8] == 1}
+      		<input type="checkbox" checked name="vincular">
+          {else}
+          <input type="checkbox" name="vincular">
+          {/if}
+      		<span class="lever"></span>
+      		Si
+    </label>
+  		</div>
+      </div>
+      <input class="btn" type="submit" value="Guardar">
+    </form>
+  </div>
+{include file='profesor/footer.html'}

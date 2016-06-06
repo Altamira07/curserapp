@@ -16,15 +16,15 @@
 <ul id="dropdown2" class="dropdown-content">
   <li><a href="mis_articulos.php">Mis articulos</a></li>
   <li><a href="agregar_articulo.php">Crear articulo</a></li>
-  <li><a href="#">Ver articulo</a></li>
+  <li><a href="articulos.php">Ver articulos</a></li>
 </ul>
 <ul id="dropdown3" class="dropdown-content">
-  <li><a href="#">Mis cursos</a></li>
-  <li><a href="#">Ver cursos</a></li>
+  <li><a href="mis_cursos.php">Mis cursos</a></li>
+  <li><a href="cursos.php">Cursos</a></li>
 </ul>
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Mi perfil</a></li>
-  <li><a href="#!">cambiar contraseña</a></li>
+  <li><a href="mis_datos.php">Mis datos</a></li>
+  <li><a href="cambiar_pass.php">cambiar contraseña</a></li>
   <li class="divider"></li>
   <li><a href="../cerrar_sesion.php">Cerrar sesion</a></li>
 </ul>
@@ -35,7 +35,14 @@
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Articulos<i class="material-icons right">arrow_drop_down</i></a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Cursos<i class="material-icons right">arrow_drop_down</i></a></li>
       <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Mis datos<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">
+        {if $smarty.session.gravatar == 1}
+          {$smarty.session.img}
+        {else}
+          <img src="../images/user.png">
+        {/if}
+
+        {$smarty.session.correo}<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>

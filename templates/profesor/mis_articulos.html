@@ -1,0 +1,44 @@
+{include file='profesor/header.html'}
+ <div class="row">
+    <a  class="breadcrumb"><span class="blue-text text-darken-2">Mis articulos</span></a>
+ </div>
+<div class="row">
+	<div class="col s12">
+		<div class="row">
+			<div class="col s6 offset-s3">
+				<form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <i class="material-icons prefix">search</i>
+			          <input id="icon_prefix" type="text" class="validate">
+			          <label for="icon_prefix">Buscar</label>
+			        </div>
+			        <br>
+			        <input type="submit" value="Buscar" class="btn">
+			      </div>
+			    </form>
+			</div>
+		</div>
+		<div class="row">
+        {foreach from=$articulos item=valor }
+        <div class="col s2 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/articulos/{$valor[4]}">
+              <span class="card-title">{$valor[1]}</span>
+            </div>
+            <div class="card-content">
+              <p>{$valor[2]}</p>
+            </div>
+            <div class="card-action">
+              <a href="mi_articulo.php?id={$valor[0]}">Ver mas</a>
+               <a href="eliminar_articulo.php?id={$valor[0]}"><img src="../images/del.png"></a>
+               <a href="editar_articulo.php?id={$valor[0]}"><img src="../images/edit.png"></a>
+            </div>
+          </div>
+        </div>
+        {/foreach}
+      </div>
+	</div>
+</div>
+{include file='profesor/footer.html'}

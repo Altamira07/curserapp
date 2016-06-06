@@ -1,41 +1,41 @@
 {include file='profesor/header.html'}
+ <div class="row">
+		<a href="agregar_curso.php" class="breadcrumb"><span class="blue-text text-darken-2">Agregar curso</span></a>
+		<a  href="editar_curso.php?id={$id}" class="breadcrumb"><span class="blue-text text-darken-2">Editar curso</span></a>
+		<a  class="breadcrumb"><span class="blue-text text-darken-2">{$tema[0][1]}</span></a>
+ </div>
 <div class="row">
-	<div class="col s6 offset-s1">
+	<div class="col s8">
 		<div class="row">
-        	<H5>{$titulo}</H5>
-        </div>
+			<h3>{$tema[0][1]}</h3>
+		</div>
 		<div class="row">
 			<div class="video-container">
-        		<iframe  src="https://www.youtube.com/watch?v=9Y6AL00J4vI" frameborder="0" allowfullscreen></iframe>
+        		<iframe width="500" src="{$tema[0][3]}"></iframe>
       		</div>
-        </div>
-        <div clas="row">
-        	Descripcion
-            <p>
-                {$descripcion}
-            </p>
-        </div>
+		</div>
+		<div class="row">
+			<p>
+				{$tema[0][2]}
+			</p>
+		</div>
 	</div>
-    <div class="col s5">
-        <div class="row">
-            <h5>Temario</h5>
-        </div>
-        <div class="row">
-             <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Temario</div>
-                    <div class="collapsible-body">
-                        {foreach from=$temario item=valor}
-                                {if $valor[0] eq $id}
-                                    <a href="ver_tema.php?ecurso={$curso}&verTema={$valor[0]}" class=" waves-effect waves-light btn #00b8d4 cyan accent-4">{$valor[1]}</a>
-                                {else}    
-                                    <a href="ver_tema.php?ecurso={$curso}&verTema={$valor[0]}" class="waves-effect waves-light btn">{$valor[1]}</a>
-                                {/if}
-                        {/foreach}
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+	<div class="col s4">
+		<ul class="collapsible" data-collapsible="accordion">
+			<li>
+     	 	<div class="collapsible-header"><i class="material-icons">filter_drama</i>Temas</div>
+      		<div class="collapsible-body"><p>
+      			{foreach from=$temas item=valor}
+      				{if $valor[0]==$tema[0][0]}
+					<a href="ver_tema.php?id={$id}&tema={$valor[0]}" class="btn #00695c teal darken-3">{$valor[1]}</a>
+					{else}
+					<a href="ver_tema.php?id={$id}&tema={$valor[0]}" class="btn">{$valor[1]}</a>
+					{/if}
+				{/foreach}</p>
+			</div>
+    		</li>
+			
+		</ul>
+	</div>
+</div>	
 {include file='profesor/footer.html'}

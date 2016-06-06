@@ -1,31 +1,41 @@
 {include file='profesor/header.html'}
-<div id="formNuevCuenta" >
-<form enctype="multipart/form-data" method="post" action="agregar_articulo.php">
-	<div class="row">
-        <div class="input-field col s12">
-          <input id="titulo" type="text" class="validate" required name="titulo">
-          <label for="titulo">Titulo del articulo</label>
-        </div>
-      </div>
-      <div class="file-field input-field">
-      <div class="btn">
-        <span>Imagen</span>
-        <input type="file" name="imagen" multiple>
-      </div>
-      <div class="file-path-wrapper">
-        <input name="imagen"  class="file-path validate" type="text" placeholder="Sube una imagen para tu articulo">
-      </div>
-    </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="contenido" class="materialize-textarea" required name="articulo"></textarea>
-          <label for="contenido">Articulo</label>
-        </div>
-      </div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Publicar
-    <i class="material-icons right">done</i>
-  </button>
-        
-</form>
+ <div class="row">
+		<a  class="breadcrumb"><span class="blue-text text-darken-2">Agregar articulo</span></a>
+ </div>
+<div class="row">
+	<div class="col s6 offset-s3">
+		<form enctype="multipart/form-data" method="post" action="agregar_articulo.php">
+			<div class="row">
+		        <div class="input-field col s12">
+		          <input id="titulo" type="text" class="validate" required name="titulo">
+		          <label for="titulo">Titulo del articulo</label>
+		        </div>
+		      </div>
+		      <div class="file-field input-field">
+		      <div class="btn">
+		        <span>Imagen</span>
+		        <input type="file" name="imagen" multiple>
+		      </div>
+		      <div class="file-path-wrapper">
+		        <input name="imagen"  class="file-path validate" type="text" placeholder="Sube una imagen para tu articulo">
+		      </div>
+		    </div>
+		    <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="descripcion" class="materialize-textarea" required name="descripcion"></textarea>
+		          <label for="descripcion">Breve descripcion</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea id="contenido" class="materialize-textarea" required name="articulo"></textarea>
+		          <label for="contenido">Articulo</label>
+		        </div>
+		      </div>
+		  <button class="btn waves-effect waves-light" type="submit">Publicar
+		    <i class="material-icons right">done</i>
+		  </button>
+		</form>
+	</div>
 </div>
 {include file='profesor/footer.html'}

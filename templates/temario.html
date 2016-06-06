@@ -1,0 +1,19 @@
+
+<page >
+	<h1>Curso: {$datos[0][2]}</h1>
+	<h2>Descripcion del curso</h2>
+	<p>
+		{$datos[0][4]}
+	</p>
+	<h3>Temas</h3>
+	<ul>
+	{foreach from=$datos item=valor}
+		<li>{$valor[7]}</li>
+		
+		<ul>
+			<li>Descripcion del tema:<br><p>{$valor[9]}</p></li>
+			
+		</ul>	
+	{/foreach}
+	</ul>
+</page>

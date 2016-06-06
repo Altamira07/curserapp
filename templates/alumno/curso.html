@@ -1,0 +1,30 @@
+{include file='alumno/header.html'}
+<div class="row">
+	<div class="col s6 offset-s3">
+		<div class="row">
+			<h1>{$curso[0][2]}</h1>
+			<form action="curso.php?id={$curso[0][0]}" method="post">
+				{if $toma == 1}
+					<input type="hidden" name="quitar" value="{$curso[0][0]}">
+					<input type="submit" class="btn" value="Quitar curso">
+				{else}
+					<input type="hidden" name="tomar" value="{$curso[0][0]}">
+					<input type="submit" class="btn" value="tomar curso">
+				{/if}
+				
+			</form>
+		</div>
+		<div class="row">
+			<div class="col s12 m7">
+				<img class="materialboxed" width="650" src="../images/articulos/{$curso[0][5]}">
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				{$curso[0][4]}
+			</p>
+			<a class="btn" href="temario.php?id={$curso[0][0]}">Descargar Temario</a>
+		</div>
+	</div>
+</div>
+{include file='alumno/footer.html'}

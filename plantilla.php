@@ -1,6 +1,7 @@
 <?php 
 	include 'conexion.php';
 	include (PATHLIB.'smarty/Smarty.class.php');
+	include(PATHLIB.'html2pdf/vendor/autoload.php');
 	class Plantilla extends Conexion{
 		public $smarty;
 		public function Iniciar(){
@@ -18,6 +19,28 @@
 			$this->smarty->caching = true;
 			$this->smarty->cache_lifetime=0;
 
+		}
+		function getGravatar($s = 25, $d = 'mm', $r = 'g', $img = true, $atts = array() ) {
+    		$email = $_SESSION['correo'];
+    		$url = 'https://www.gravatar.com/avatar/';
+    		$url .= md5( strtolower( trim( $email ) ) );
+    			$url .= "?s=$s&d=$d&r=$r";
+   	 			if ( $img ) {
+        			$url = '<img src="' . $url . '"';
+		        	foreach ( $atts as $key => $val )
+		            $url .= ' ' . $key . '="' . $val . '"';
+		        	$url .= ' />';
+    			}
+    		return $url;
+		}
+		public function pdfTemario($id){
+			$html2pdf = new HTML2PDF('P','A4','fr');
+			$html2pdf->setDefaultFont('Arial');
+		    $datos = $this->datos("select * from curso c inner join tema t on t.id_curso = c.id_curso");
+		    $this->asignar('datos',$datos);
+		    $contenido = $this->smarty->fetch('temario.html');
+		    $html2pdf->WriteHTML($contenido);
+			$html2pdf->Output('temario.pdf');	
 		}
 		public function desplegar($vista){//Despliega la vista
 			$this->smarty->display($vista);
