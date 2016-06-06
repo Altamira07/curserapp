@@ -1,15 +1,32 @@
 <?php 
 	include 'plantilla.php';
 	include (PATHLIB.'phpmailer/PHPMailerAutoload.php');
+	include(PATHLIB.'nusoap/nusoap.php');
 	class Sistema extends Plantilla{
 		function __construct(){
 			parent::Iniciar();
+			$this->clima();
 		}
 		public function cerrarSesion(){
 			session_start();
 			unset($_SESSION);
 			session_destroy();
 			header('Location: .');
+		}
+		public function clima()
+		{
+			$paramers = array('CityName'=>'Mexico', 'CountryName'=>'Mexico');
+			try {
+				$c = new nusoap_client('http://www.webservicex.net/globalweather.asmx?WSDL','wsdl');
+				$result = $c->call('GetWeather',$paramers);
+				$result = $result['GetWeatherResult'];
+				$result = str_replace('utf-16', 'utf-8', $result);
+				$temp = new SimpleXMLElement($result);
+				$temperatura = $temp->Temperature;
+			} catch (Exception $ex) {
+				$temperatura = "";
+			}
+			$this->asignar('temp',$temperatura);
 		}
 		public function login($correo,$pass){
 			if ($this->valCorreo($correo)){
