@@ -1,7 +1,7 @@
 <?php
 	##Variables del sistema
 define('ZONA_HORARIA'	,"Mexico/General");
-define('PATHAPP', '/var/www/html/curserapp/');
+define('PATHAPP', dirname(__FILE__).'/');
 define('LIB', 'lib/');
 define('TEMPLATES', 'templates/');
 define('TEMPLATES_C', 'templates_c/');
