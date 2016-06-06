@@ -1,0 +1,30 @@
+Curserapp 
+
+---Introduccion---
+Es una aplicacion desarrollada como proyecto web,
+esto para la materia programacion web del ITC en el año 2016.
+En esta aplicacion web se tienen dos clases de usuarios, profesores 
+y alumnos. Ambos tipos de usuarios tienen la posibilidad de crear, 
+y publicar articulos (pueden editar,eliminar) los que les correspondan.
+Su diferencia radica en que el profesor puede dar de alta cursos, asi 
+como modificarlos y eliminarlos, mientras el que alumno solo puede tomar cursos.
+
+
+---Instalacion---
+Pasos.
+1.- Descargar:
+	-El proyecto de github en el siguiente vinculo https://github.com/Altamira07/curserapp
+
+2.- Configurar;
+	- Primero se debe configurar el archivo configuracion.php ya que este contiene todas las rutas 
+	 de acceso. La linea a modificar es define(PATHAPP,''), entre las comillas debera ir la ruta donde 
+	 se encuentra la aplicacion instalada.
+	-Segundo modificar define ('MAIL_USERNAME','') y define ('MAIL_PASS',''), en la primera debera ir 
+	el correo que se usara para el envio de correos, esto con el fin que los usuarios puedan recuperar 
+	su contraseña. En el segundo tendra que escribir la contraseña de este correo.
+3.- Dar de alta la base de datos
+	- Se debe instalar la base de datos mysql
+	- Se debe crear una base de datos llamada curserapp
+	- Dar de alta un usuario con el nombre de curserapp y con contraseña 1234
+	- Importar la base de datos. Esto se hace mediante un archivo incluido en el proyecto llamado curserapp.sql
+4.- Una vez configurado esto, se podra acceder a la aplicacion desde el hosting que previamente usted adquirio.
