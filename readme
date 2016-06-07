@@ -9,6 +9,11 @@ y publicar articulos (pueden editar,eliminar) los que les correspondan.
 Su diferencia radica en que el profesor puede dar de alta cursos, asi 
 como modificarlos y eliminarlos, mientras el que alumno solo puede tomar cursos.
 
+--Requisitos--
+Para realizar la instalacion completa de la aplicacion se deben cumplir los siguientes requisitos
+1.- Servidor con apache
+2.- Mysql 5.0 minimo
+3.- PHP 5.4
 
 ---Instalacion---
 Pasos.
