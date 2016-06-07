@@ -1,5 +1,5 @@
 <?php 
-	//include 'sistema.php';
+	include 'sistema.php';
 	echo "Esto funcina ? ";
-	//$web->desplegar('index.html');
+	$web->desplegar('index.html');
  ?>
